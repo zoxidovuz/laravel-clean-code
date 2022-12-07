@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Jobs\Posts;
+namespace Domain\Blogging\Jobs;
 
 use Domain\Blogging\Actions\CreatePost;
 use Domain\Blogging\ValueObjects\PostValueObject;
