@@ -24,8 +24,6 @@ Route::prefix('posts')->as('posts:')->group(static function () {
     Route::get('/', IndexController::class)->name('index'); // route('api:v1:posts:index')
     Route::post('/', StoreController::class)->name('store'); // route('api:v1:posts:store')
     Route::get('{post:key}', ShowController::class)->name('show'); // route('api:v1:posts:show', ['post' => $post->key])
-
     Route::patch('{post:key}', UpdateController::class)->name('update'); // route('api:v1:posts:update', ['post' => $post->key])
-
     Route::delete('{post:key}', DeleteController::class)->name('delete'); // route('api:v1:posts:delete', ['post' => $post->key])
 });
