@@ -12,7 +12,7 @@ class PostResource extends JsonResource
     {
         return [
             'id' => $this->key,
-            'type' => 'post',
+            'type' => 'posts',
             'attributes' => [
                 'title' => $this->title,
                 'body' => $this->body,

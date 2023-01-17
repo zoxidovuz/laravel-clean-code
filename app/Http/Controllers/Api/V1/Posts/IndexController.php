@@ -18,7 +18,7 @@ class IndexController extends Controller
         $posts = QueryBuilder::for(subject: Post::class)
             ->allowedIncludes(includes: [
                 'user',
-            ])->paginate(3);
+            ])->paginate();
 
         return response()->json(
             data: PostResource::collection(
