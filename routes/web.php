@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Posts\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,3 +25,12 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+/*
+ * Post routes
+ */
+
+Route::prefix(prefix: 'posts')->as('posts:')->group(function (){
+    Route::post('', action: StoreController::class)->name('store');
+});
+
